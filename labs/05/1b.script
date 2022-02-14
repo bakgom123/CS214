@@ -1,0 +1,13 @@
+Script started on 2022-02-09 15:21:46-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$  l[K[Kclojurescript 1.script[8Pclojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [] 17.2))x] (nil? x)) 5)[9@ y z] (+ x y z)) 3 4[C[C[C[C[C[C[C[C[C[C[K((fn [x y z] (+ x y z)) 3 4 5)
+[K12
+user=> [Kuser=> [Kuser=> ((fn [x y z] (+ x y z)) 3 4 5)[C[C[C[C[C[C[C[C[C[C[C[C[C[16P] 17.2))x] (nil? x)) 5)[C[C[C[C[C[C[C[K((fn [x] (nil? x)) 5)
+false
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) 5)[9@ y z] (+ x y z)) 3 4[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16P] 17.2))[C[C[C[C[C[C[C[K((fn [] 17.2))
+17.2
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:23:03-05:00 [COMMAND_EXIT_CODE="0"]

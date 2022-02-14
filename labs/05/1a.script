@@ -1,0 +1,13 @@
+Script started on 2022-02-09 15:18:09-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 5)[C-5)[C[C[C[C[C[C[C[C[C[K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 -5)
+[K5
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 -5)[1P5)[C[C[C[C[C[C[C[C[C[K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 5)
+5
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 5)-5)[1@-[1@-[C[C[C[C[C[C[C[K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) -3 -4 -5)
+5
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:18:50-05:00 [COMMAND_EXIT_CODE="0"]

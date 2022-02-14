@@ -1,0 +1,259 @@
+Script started on 2022-02-09 14:39:46-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ()[C[C[1P)[C[K(+ 1 2 3 4 5)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(+ 1 2 3 4 5)
+15
+user=> [Kuser=> [Kuser=> cat[K[K[K
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 14:40:25-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 14:47:49-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y] (+ (* x x) {* y y))) 3 4)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15P] (+ x x)) 21)[C[C[C[C[C[C[C[C[4Pfn [x] (+ x x) )[C[C[C[C[C[C[C[C(fn [x y] (+ (* x x) (* y y))) 3 4)[C[C[C[C[C[C[C[C[19Pfn [x] (+ x x) )[C[C[C[C[C[C[C[K(fn [x] (+ x x) )
+[K#object[user$eval136$fn__137 0x5432050b "user$eval136$fn__137@5432050b"]
+user=> [Kuser=> [Kuser=> (fn [x] (+ x x) )[C[C[C[C[C[C[C[C(fn [x y] (+ (* x x) {* y y))) 3 4)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15P] (+ x x)) 21)[C[C[C[C[C[C[C[K((fn [x] (+ x x)) 21)
+42
+user=> [Kuser=> [Kuser=> ((fn [x] (+ x x)) 21)[C[C[C[C[C[C[C[C[4Pfn [x] (+ x x) )[C[C[C[C[C[C[C[C(fn [x y] (+ (* x x) {* y y))) 3 4)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15P] (+ x x)) 21)[C[C[C[C[C[C[C[C[4Pfn [x] (+ x x) )[C[C[C[C[C[C[C[C(fn [x y] (+ (* x x) (* y y))) 3 4)[C[C[C[C[C[C[C[K((fn [x y] (+ (* x x) (* y y))) 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 14:48:16-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 15:18:09-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 5)[C-5)[C[C[C[C[C[C[C[C[C[K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 -5)
+[K5
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 -5)[1P5)[C[C[C[C[C[C[C[C[C[K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 5)
+5
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 3 4 5)-5)[1@-[1@-[C[C[C[C[C[C[C[K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) -3 -4 -5)
+5
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:18:50-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 15:21:46-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$  l[K[Kclojurescript 1.script[8Pclojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [] 17.2))x] (nil? x)) 5)[9@ y z] (+ x y z)) 3 4[C[C[C[C[C[C[C[C[C[C[K((fn [x y z] (+ x y z)) 3 4 5)
+[K12
+user=> [Kuser=> [Kuser=> ((fn [x y z] (+ x y z)) 3 4 5)[C[C[C[C[C[C[C[C[C[C[C[C[C[16P] 17.2))x] (nil? x)) 5)[C[C[C[C[C[C[C[K((fn [x] (nil? x)) 5)
+false
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) 5)[9@ y z] (+ x y z)) 3 4[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16P] 17.2))[C[C[C[C[C[C[C[K((fn [] 17.2))
+17.2
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:23:03-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 15:31:14-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ (def triple (fn[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kclojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (fn [x] (* x 3))[C[C[C[C[C[C[C[8P#(* % 3)(#(* % 3) 4)[C[C[C[C[C[C[C[Cdefn triple [x] (* x 3))[C[C[C[C[C[C[C[C[15Ptriple 4)def triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[K(def triple (fn [x] (* x 3)))
+[K#'user/triple
+user=> [Kuser=> [Kuser=> (def triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[C[13Pfn [x] (* x 3))[C[C[C[C[C[C[C[8P#(* % 3)(#(* % 3) 4)[C[C[C[C[C[C[C[Cdefn triple [x] (* x 3))[C[C[C[C[C[C[C[C[15Ptriple 4)[C[C[C[C[C[C[C[K(triple 4)
+12
+user=> [Kuser=> [Kuser=> (triple 4)def triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[C[13Pfn [x] (* x 3))[C[C[C[C[C[C[C[Cdef triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[C[13Pfn [x] (* x 3))[C[C[C[C[C[C[C[8P#(* % 3)(#(* % 3) 4)[C[C[C[C[C[C[C[Cdefn triple [x] (* x 3))[C[C[C[C[C[C[C[K(defn triple [x] (* x 3))
+#'user/triple
+user=> [Kuser=> [Kuser=> (defn triple [x] (* x 3))[C[C[C[C[C[C[C[C[15Ptriple 4)def triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[C[13Pfn [x] (* x 3))[C[C[C[C[C[C[C[8P#(* % 3)(#(* % 3) 4)[C[C[C[C[C[C[C[K(#(* % 3) 4)
+12
+user=> [Kuser=> [Kuser=> #(+ (* %1 %1)[C[C[C[C[C[C[C[C[C (* %2 %2)[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[K[K)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K#(+ (* %1 %1) (* %2 %2))
+#object[user$eval150$fn__151 0x16fe9c29 "user$eval150$fn__151@16fe9c29"]
+user=> [Kuser=> [Kuser=> #(+ (* %1 %1) (* %2 %2)) 3 4)[1@([K(#(+ (* %1 %1) (* %2 %2)) 3 4)
+25
+user=> [Kuser=> [Kuser=> (def syn2[K[K[Kum2Squares #(+ (* %1 %1)[C[C[C[C[C[C[C[C[C (* %2 %2)[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(def sum2Squares #(+ (* %1 %1) (* %2 %2)))
+#'user/sum2Squares
+user=> [Kuser=> [Kuser=> (syj=[K[K[Kum2Sqyres[K[K[K[Kuares 3 4)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(sum2Squares 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:38:18-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 15:41:52-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> script 2a.script[C[C[C[C[C[C[C(square2Times 2)[C[C[C[C[C[C[C[Cdef square2Times #(* (* %1 %1) (* %1 %1)))[C[C[C[C[C[C[C[K(def square2Times #(* (* %1 %1) (* %1 %1)))
+#'user/square2Times
+user=> [Kuser=> [Kuser=> (def square2Times #(* (* %1 %1) (* %1 %1)))[C[C[C[C[C[C[C[27Pscript 2a.script[C[C[C[C[C[C[C(square2Times 2)[C[C[C[C[C[C[C[K(square2Times 2)
+16
+user=> [Kuser=> [Kuser=> (square2Times 2)[C[C[C[C[C[C[C[Cdef square2Times #(* (* %1 %1) (* %1 %1)))[C[C[C[C[C[C[C[27Pscript 2a.script[C[C[C[C[C[C[C(square2Times 2)[C[C[C[C[C[C[Cscript 2a.script[C[C[C[C[C[C[C(square2Times 2)[C[1P)3)[1P)-)2)[C[C[C[C[C[C[C[C[K(square2Times -2)
+16
+user=> [Kuser=> [Kuser=> (square2Times -2)[1P2)[C[1P)3)[C[C[C[C[C[C[C[C[K(square2Times 3)
+81
+user=> [Kuser=> [Kuser=> (square2Times 3)[1P)-)3)[C[C[C[C[C[C[C[K(square2Times -3)
+81
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:42:48-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 15:43:39-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (nao ubc[K[K[K[K[K[K[Kmap inc [ [K1 2 3 4][C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map inc [1 2 3 4])
+(2 3 4 5)
+user=> [Kuser=> [Kuser=> (map inc [1 2 3 4])[C[1P[1P[1P[1@-[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map - [1 2 3 4])
+(-1 -2 -3 -4)
+user=> [Kuser=> [Kuser=> (map - [1 2 3 4])[C[K [ [K1 2 3 4][C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map - [1 2 3 4] [1 2 3 4])
+(0 0 0 0)
+user=> [Kuser=> [Kuser=> (map - [1 2 3 4] [1 2 3 4]))[K[C[1P[1@e[1@v[1@e[1@n[1@?[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map even? [1 2 3 4])
+(false true false true)
+user=> [Kuser=> [Kuser=> (map str[[K [""[Ka" "b" "c"][C[C[C[C[C[C[C[C[C[C[C[C[C ["A" "B" "C"][C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map str ["a" "b" "c"] ["A" "B" "C"])
+("aA" "bB" "cC")
+user=> [Kuser=> [Kuser=> (map count [[11][C[C[C[C [11 22][C[C[C[C[C[C[C [11 22 33][C[C[C[C[C[C[C[C[C[C][C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map count [[11] [11 22] [11 22 33]])
+(1 2 3)
+user=> [Kuser=> [Kuser=> (map + [1 2 3 4][C[C[C[C[C[C[C[C[C [1 2 3 4][C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map + [1 2 3 4] [1 2 3 4])
+(2 4 6 8)
+user=> [Kuser=> [Kuser=> (map + [1 2 3 4] [1 2 3 4])[C[1P[1@*[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map * [1 2 3 4] [1 2 3 4])
+(1 4 9 16)
+user=> [Kuser=> [Kuser=> (Math/abs -3)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(Math/abs -3)
+3
+user=> [Kuser=> [Kuser=> (map Math/abs [-1 -2 -3 4 -5][C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map Math/abs [-1 -2 -3 4 -5])
+Syntax error compiling at (REPL:1:1).
+Unable to find static field: abs in class java.lang.Math
+user=> [Kuser=> [Kuser=> (map (fn [x][C[C[C (if (< x 0)[C[C[C[C[C[C[C (-x)[C[C[C[C x_[K)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C [-1 2 -3 4 -5][C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map (fn [x] (if (< x 0) (-x) x)) [-1 2 -3 4 -5])
+[KSyntax error compiling at (REPL:1:26).
+Unable to resolve symbol: -x in this context
+user=> [Kuser=> [Kuser=> (map (fn [x] (if (< x 0) (-x) x)) [-1 2 -3 4 -5])[1@ [1P[C[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(map (fn [x] (if (< x 0) (- x) x)) [-1 2 -3 4 -5])
+(1 2 3 4 5)
+user=> [Kuser=> [Kuser=> (defn subttr[K[Kract-n [n sequence][C[C[C[C[C[C[C[C[C[C[C[C (map[K[Kap (fn [x][C[C[C (- x n)[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C sequence)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(defn subtract-n [n sequence] (map (fn [x] (- x n)) sequence))
+#'user/subtract-n
+user=> [Kuser=> [Kuser=> (subtrea[K[K[Kract-n 2 [5 6 7 8][C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(subtract-n 2 [5 6 7 8])
+(3 4 5 6)
+user=> [Kuser=> [Kuser=> (filter odd? [1 2 3 4][C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(filter odd? [1 2 3 4])
+(1 3)
+user=> [Kuser=> [Kuser=> (filter eve[K[K[K[K[K[K[K[K[K[K[K(filter odd? [1 2 3 4])[C[C[1P[1P[1P[1@e[1@v[1@e[1@n[C[C[C[C[C[C[C[K(filter even? [1 2 3 4])
+(2 4)
+user=> [Kuser=> [Kuser=> (filter even? [1 2 3 4])[1P[1P[1P[1P[1@n[1@e[1@g[C[C[C[C[C[C[C[K(filter neg? [1 2 3 4])
+()
+user=> [Kuser=> [Kuser=> (filter neg? [1 2 3 4])[C[C[C[C[1@-[C[C[C[1@ [1@2[1P[1@1[C[1@ [1@-[1P[1P[C[1@ [1P[C[C[1@ [1@-[1@2[C[1@ [1@3[C[1@-[C[C[C-])[1P]) ])-])4])[C[C[C[C[C[C[C[C[C[K(filter neg? [-1 1 2 -2 3 -3 4 -4])
+(-1 -2 -3 -4)
+user=> [Kuser=> [Kuser=> (filter neg? [-1 1 2 -2 3 -3 4 -4])[C[1P[1P[1P[1@p[1@o[1@s[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P])[1P])[1P])[1P])[1P])[C[C[C[C[C[C[C[C[C[K(filter pos? [-1 1 2 -2 3 -3])
+(1 2 3)
+user=> [Kuser=> [Kuser=> (filter (fn [x][C[C[C (and (pos? x)[C[C[C[C[C[C[C[C (env[K[Kven? x)[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C [-1 1 -2 2 -3 3 -4 4][C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(filter (fn [x] (and (pos? x) (even? x))) [-1 1 -2 2 -3 3 -4 4])
+(2 4)
+user=> [Kuser=> [Kuser=> (filter (fn [x] (and (pos? x) (even? x))) [-1 1 -2 2 -3 3 -4 4])[1P[1P[1P[1@m[1@e[1P[1P[1@n[1@e[1@g[C[C[C[C[C[C[C[C[C[1P[C[1P[1P[1P[1@o[1@d[1@d[C[C[C[C[C[C[C[K(filter (fn [x] (and (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])
+(-1 -3)
+user=> [Kuser=> [Kuser=> (filter (fn [x] (and (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])[1P[C[1P[1P[1@o[1@r[C[C[C[C[C[C[C[K(filter (fn [x] (or (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])
+(-1 1 -2 -3 3 -4)
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:54:31-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 16:23:53-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> script 3a.script[C[C[C[C[C[C[C(negate [-1 -2 -3])[C[C[C[C[C[C[C[Cdefn negate [sequence] (map (fn [x] (- 0 x)) sequence))[C[C[C[C[C[C[C[Cnegate [-1 -2 -3])[K[C[C[C[C[C[C[C[Cdefn negate [sequence] (map (fn [x] (- 0 x)) sequence))[C[C[C[C[C[C[C[K(defn negate [sequence] (map (fn [x] (- 0 x)) sequence))
+[K#'user/negate
+user=> [Kuser=> [Kuser=> (negate [-1 2 -3][C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(negate [-1 2 -3])
+(1 -2 3)
+user=> [Kuser=> [Kuser=> (negate [-1 2 -3])[C[C[C[C[C[1P])[1P])[1P])[1P])[1P])[1P])[1P])4]) ])-])5]) ])6])[C[C[C[C[C[C[C[K(negate [4 -5 6])
+(-4 5 -6)
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 16:24:39-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 16:25:29-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (reu[Kduce + [1 2 3][C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(reduce + [1 2 3])
+6
+user=> [Kuser=> [Kuser=> (reduce + ' (1 2 3)[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[K(reduce + ' (1 2 3))
+6
+user=> [Kuser=> [Kuser=> (reduce mna[K[Kax [1 2 3][C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(reduce max [1 2 3])
+3
+user=> [Kuser=> [Kuser=> (reduce cibj[K[K[Konj [1 2 3][C[C[C[C[C[C[C [4 5 6][C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(reduce conj [1 2 3] [4 5 6])
+[1 2 3 4 5 6]
+user=> [Kuser=> [Kuser=> (reduce + [1 2 3 4 5][C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(reduce + [1 2 3 4 5])
+15
+user=> [Kuser=> [Kuser=> (reduce + 1 '(2 3 4 5)[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[K(reduce + 1 '(2 3 4 5))
+15
+user=> [Kuser=> [Kuser=> (reduce[K[K[K[K[K[K[K(reduce + 1 '(2 3 4 5))[C[1P[C[C[C[C[C[C[C[K(reduce + 1 (2 3 4 5))
+Execution error (ClassCastException) at user/eval13 (REPL:1).
+class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+user=> [Kuser=> [Kuser=> (reduce + 1 (2 3 4 5))[C[K{)[1P)])[1P[1@[[C[C[C[C[C[C[C[K(reduce + 1 [2 3 4 5])
+15
+user=> [Kuser=> [Kuser=> (reduce + 1 [2 3 4 5])(2 3 4 5))[1@'[C[C[C[C[C[C[C[C[C[C[1P[1 2 3 4 5])conj [1 2 3] [4 5 6])[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9Pmax [1 2 3])[C[1@ [1@5[C[C[C[1@4[1@ [1@3[1@ [1@2[1@ [C[1@1[C[C[C[C[C[C[C[1P])[1P])[1P])[1P])[1P])[C[C[C[C[C[C[C[K(reduce max 5 [4 3 2 1])
+5
+user=> [Kuser=> [Kuser=> (reduce bit-or [1 2 3 4][C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(reduce bit-or [1 2 3 4])
+7
+user=> [Kuser=> [Kuser=> (reduce str [a[K"a" "b'[K" "c"][C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(reduce str ["a" "b" "c"])
+"abc"
+user=> [Kuser=> [Kuser=> (reduce + 1 2 [3 4 5][C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(reduce + 1 2 [3 4 5])
+Execution error (ArityException) at user/eval23 (REPL:1).
+Wrong number of args (4) passed to: clojure.core/reduce
+user=> [Kuser=> [Kuser=> (reduce + 1 '(2 3 4)[C[C[C[C[C[C[C 5)[C[C[C[C[C[C[C[K(reduce + 1 '(2 3 4) 5)
+Execution error (ArityException) at user/eval25 (REPL:1).
+Wrong number of args (4) passed to: clojure.core/reduce
+user=> [Kuser=> [Kuser=> (defn s[Kcsv [seq][C[C[C[C[C (reduce (fn [a v[Kb][C[C[C[C[C (str a "," b)[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C seq)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(defn csv [seq] (reduce (fn [a b] (str a "," b)) seq))
+[K#'user/csv
+user=> [Kuser=> [Kuser=> (csv [11 22 33][C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(csv [11 22 33])
+"11,22,33"
+user=> [Kuser=> [Kuser=> (defn totalY[KItems [seqOfSeqs][C[C[C[C[C[C[C[C[C[C[C (reduce + (map count seqOfSeqs)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(defn totalItems [seqOfSeqs] (reduce + (map count seqOfSeqs)))
+#'user/totalItems
+user=> [Kuser=> [Kuser=> (toi[KtalItems [["Ann"][C[C[C[C[C[C[C [""B"o"b"[C "Christ[K"][C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ["Dan" "Eve" "Fred"][C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C][C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(totalItems [["Ann"] ["Bob" "Chris"] ["Dan" "Eve" "Fred"]])
+6
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 16:31:54-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 17:13:54-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure(reduce + [1 2 3])[11Pclojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> script 4.script[C[C[C[C[C[C[C(sumSquares '(1 2 3))[C[C[C[C[C[C[C[Cdefn sumSquares [seq] (reduce + (map (fn [x] (* x x)) seq)))[C[C[C[C[C[C[C[K(defn sumSquares [seq] (reduce + (map (fn [x] (* x x)) seq)))
+[K#'user/sumSquares
+user=> [Kuser=> [Kuser=> (sumQu[Kaure[K[K[K[K[KSquares '(1 2 3)[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[K(sumSquares '(1 2 3))
+14
+user=> [Kuser=> [Kuser=> (sumSquares '(1 2 3 4 5)[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[K(sumSquares '(1 2 3 4 5))
+55
+user=> [Kuser=> [Kuser=> (sumSquares [-1 -2 -3 0 1][C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(sumSquares [-1 -2 -3 0 1])
+15
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 17:15:25-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-09 17:17:35-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ (defnm[K incMaker [incValuer[K] #(+ % incVasl[K[Klue)[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kclojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (defn incMaker [incValue][C[C[C[C[C[C[C[C[C[C #(+ % incValue)[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(defn incMaker [incValue] #(+ % incValue))
+[K#'user/incMaker
+user=> [Kuser=> [Kuser=> (def inc5 (incMaker 5)[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(def inc5 (incMaker 5))
+#'user/inc5
+user=> [Kuser=> [Kuser=> inc[K[K[K(inc5 (10)[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(inc5 (10))
+Execution error (ClassCastException) at user/eval141 (REPL:1).
+class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+user=> [Kuser=> [Kuser=> inc5 (1)[C[C[C[Kinc5 (1)
+#object[user$incMaker$fn__138 0x6b580b88 "user$incMaker$fn__138@6b580b88"]
+Execution error (ClassCastException) at user/eval143 (REPL:1).
+class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+user=> [Kuser=> [Kuser=> inc5 1[Kinc5 1
+#object[user$incMaker$fn__138 0x6b580b88 "user$incMaker$fn__138@6b580b88"]
+1
+user=> [Kuser=> [Kuser=> (inc5 1)[C[C[C[C[C[C[C[C[K(inc5 1)
+6
+user=> [Kuser=> [Kuser=> (defbn[K[Kn grea[KetingBuilder [greeting][C[C[C[C[C[C[C[C[C[C (fn [visitor][C[C[C[C[C[C[C[C[C (str greeting "," visitors "!")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(defn greetingBuilder [greeting] (fn [visitor] (str greeting "," visitors "!")))
+Syntax error compiling at (REPL:1:48).
+Unable to resolve symbol: visitors in this context
+user=> [Kuser=> [Kuser=> (defn greetingBuilder [greeting] (fn [visitor] (str greeting "," visitors "!")))[1@ [C[C[C[C[C[C[C[K(defn greetingBuilder [greeting] (fn [visitor] (str greeting ", " visitors "!")))
+Syntax error compiling at (REPL:1:48).
+Unable to resolve symbol: visitors in this context
+user=> [Kuser=> [Kuser=> (defn greetingBuilder [greeting] (fn [visitor] (str greeting ", " visitors "!")))[1P "!")))[C[C[C[C[C[C[C[K(defn greetingBuilder [greeting] (fn [visitor] (str greeting ", " visitor "!")))
+#'user/greetingBuilder
+user=> [Kuser=> [Kuser=> (def csGreeting (greetingBuilder ""W"e"l"c"o"m" "t"o" "C"S" "2"1"4"[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(def csGreeting (greetingBuilder "Welcom to CS 214"))
+#'user/csGreeting
+user=> [Kuser=> [Kuser=> (def englishGreeting (grr[KeetingBuilder "Hello!")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(def englishGreeting (greetingBuilder "Hello!"))
+#'user/englishGreeting
+user=> [Kuser=> [Kuser=> (def fe[KrenchGreeting (grr[KeetingBuilder "Bonjour")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(def frenchGreeting (greetingBuilder "Bonjour"))
+#'user/frenchGreeting
+user=> [Kuser=> [Kuser=> (csGreeting "Ann")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(csGreeting "Ann")
+"Welcom to CS 214, Ann!"
+user=> [Kuser=> [Kuser=> (englishGreeting "Chrsit[K[K[Kis")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(englishGreeting "Chris")
+"Hello!, Chris!"
+user=> [Kuser=> [Kuser=> (frechGreeting "Chris")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(frechGreeting "Chris")
+Syntax error compiling at (REPL:1:1).
+Unable to resolve symbol: frechGreeting in this context
+user=> [Kuser=> [Kuser=> (frechGreeting "Chris")[C[1@n[K(frenchGreeting "Chris")
+"Bonjour, Chris!"
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 17:24:18-05:00 [COMMAND_EXIT_CODE="0"]

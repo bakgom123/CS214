@@ -1,0 +1,23 @@
+Script started on 2022-02-09 15:31:14-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ (def triple (fn[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kclojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (fn [x] (* x 3))[C[C[C[C[C[C[C[8P#(* % 3)(#(* % 3) 4)[C[C[C[C[C[C[C[Cdefn triple [x] (* x 3))[C[C[C[C[C[C[C[C[15Ptriple 4)def triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[K(def triple (fn [x] (* x 3)))
+[K#'user/triple
+user=> [Kuser=> [Kuser=> (def triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[C[13Pfn [x] (* x 3))[C[C[C[C[C[C[C[8P#(* % 3)(#(* % 3) 4)[C[C[C[C[C[C[C[Cdefn triple [x] (* x 3))[C[C[C[C[C[C[C[C[15Ptriple 4)[C[C[C[C[C[C[C[K(triple 4)
+12
+user=> [Kuser=> [Kuser=> (triple 4)def triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[C[13Pfn [x] (* x 3))[C[C[C[C[C[C[C[Cdef triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[C[13Pfn [x] (* x 3))[C[C[C[C[C[C[C[8P#(* % 3)(#(* % 3) 4)[C[C[C[C[C[C[C[Cdefn triple [x] (* x 3))[C[C[C[C[C[C[C[K(defn triple [x] (* x 3))
+#'user/triple
+user=> [Kuser=> [Kuser=> (defn triple [x] (* x 3))[C[C[C[C[C[C[C[C[15Ptriple 4)def triple (fn [x] (* x 3)))[C[C[C[C[C[C[C[C[13Pfn [x] (* x 3))[C[C[C[C[C[C[C[8P#(* % 3)(#(* % 3) 4)[C[C[C[C[C[C[C[K(#(* % 3) 4)
+12
+user=> [Kuser=> [Kuser=> #(+ (* %1 %1)[C[C[C[C[C[C[C[C[C (* %2 %2)[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[K[K)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K#(+ (* %1 %1) (* %2 %2))
+#object[user$eval150$fn__151 0x16fe9c29 "user$eval150$fn__151@16fe9c29"]
+user=> [Kuser=> [Kuser=> #(+ (* %1 %1) (* %2 %2)) 3 4)[1@([K(#(+ (* %1 %1) (* %2 %2)) 3 4)
+25
+user=> [Kuser=> [Kuser=> (def syn2[K[K[Kum2Squares #(+ (* %1 %1)[C[C[C[C[C[C[C[C[C (* %2 %2)[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(def sum2Squares #(+ (* %1 %1) (* %2 %2)))
+#'user/sum2Squares
+user=> [Kuser=> [Kuser=> (syj=[K[K[Kum2Sqyres[K[K[K[Kuares 3 4)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(sum2Squares 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:38:18-05:00 [COMMAND_EXIT_CODE="0"]

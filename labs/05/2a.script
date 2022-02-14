@@ -1,0 +1,17 @@
+Script started on 2022-02-09 15:41:52-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> script 2a.script[C[C[C[C[C[C[C(square2Times 2)[C[C[C[C[C[C[C[Cdef square2Times #(* (* %1 %1) (* %1 %1)))[C[C[C[C[C[C[C[K(def square2Times #(* (* %1 %1) (* %1 %1)))
+#'user/square2Times
+user=> [Kuser=> [Kuser=> (def square2Times #(* (* %1 %1) (* %1 %1)))[C[C[C[C[C[C[C[27Pscript 2a.script[C[C[C[C[C[C[C(square2Times 2)[C[C[C[C[C[C[C[K(square2Times 2)
+16
+user=> [Kuser=> [Kuser=> (square2Times 2)[C[C[C[C[C[C[C[Cdef square2Times #(* (* %1 %1) (* %1 %1)))[C[C[C[C[C[C[C[27Pscript 2a.script[C[C[C[C[C[C[C(square2Times 2)[C[C[C[C[C[C[Cscript 2a.script[C[C[C[C[C[C[C(square2Times 2)[C[1P)3)[1P)-)2)[C[C[C[C[C[C[C[C[K(square2Times -2)
+16
+user=> [Kuser=> [Kuser=> (square2Times -2)[1P2)[C[1P)3)[C[C[C[C[C[C[C[C[K(square2Times 3)
+81
+user=> [Kuser=> [Kuser=> (square2Times 3)[1P)-)3)[C[C[C[C[C[C[C[K(square2Times -3)
+81
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 15:42:48-05:00 [COMMAND_EXIT_CODE="0"]

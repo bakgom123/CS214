@@ -1,0 +1,258 @@
+Script started on 2022-02-02 09:57:00-05:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="142" LINES="12"]
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ javac -deprecation LogTable.java
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+/* LogTable.java displays a table of logarithms.
+ *
+ * Input: start, stop and increment, three doubles.
+ * PRE: start < stop && increment > 0.
+ * Output: A table of logarithms from start to stop,
+ *         with increment as the step value.
+ * Begun by: Nelesen, for CS 214 at Calvin College.
+ * Completed by: David Yoo (gy24)
+ ********************************************************/
+import java.util.Scanner; 		// Get input
+import java.lang.Math;             // For logarithm
+
+class LogTable{
+
+  public static void main(String[] args){
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("To display a table of logarithms,");
+    System.out.println("enter the start, stop and increment values: ");
+    double start, stop, increment;
+    start = keyboard.nextDouble();
+    stop = keyboard.nextDouble();
+    increment = keyboard.nextDouble();
+
+    //Replace this line with a while loop to generate the table of logs
+    double count = 0;
+    while (start <= stop){
+      count = start;
+      System.out.printf("The logarithm of %f is %f\n", count, Math.log10(count));
+      start = start + increment;
+    }
+  }
+}
+
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ cat LogTable.java[15@javac -deprecation[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ java LogTable
+To display a table of logarithms,
+enter the start, stop and increment values: 
+1
+2
+0.5
+The logarithm of 1.000000 is 0.000000
+The logarithm of 1.500000 is 0.176091
+The logarithm of 2.000000 is 0.301030
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ exit
+
+Script done on 2022-02-02 09:57:24-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-02 09:57:38-05:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="142" LINES="12"]
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ cat log_table.adb
+-- log_table.adb computes a table of logarithms.
+--
+-- Input: start, stop, increment, three reals.
+-- Precondition: increment is positive.
+-- Output: A table of logarithms beginning with log(start),
+--         ending with log(stop), with intervals of increment.
+--
+-- Begun by: Prof. Adams, for CS 214 at Calvin College.
+-- Completed by: David Yoo (gy24)
+--------------------------------------------------------------
+
+with Ada.Text_IO, Ada.Float_Text_IO, Ada.Numerics.Elementary_Functions;
+use  Ada.Text_IO, Ada.Float_Text_IO, Ada.Numerics.Elementary_Functions;
+
+
+procedure log_table is
+
+   Start, Stop, Increment : Float;
+
+begin                                           -- Prompt for input
+   Put_Line("To print a table of logarithms,");
+   Put(" enter the start, stop, and increment values: ");
+   Get(Start); Get(Stop); Get(Increment);
+
+   -- Replace this line with a loop to generate the table of logs.
+   while Start <= Stop loop
+      Put("The logarithm of");
+      Put(Start);
+      Put("is ");
+      Put( log(Start, 10.0) );
+      New_Line;
+      Start := Start + Increment;
+   end loop;
+   
+
+end log_table;
+
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ gnatmake log_table
+x86_64-linux-gnu-gcc-7 -c log_table.adb
+x86_64-linux-gnu-gnatbind-7 -x log_table.ali
+x86_64-linux-gnu-gnatlink-7 log_table.ali
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ ./log_table
+To print a table of logarithms,
+ enter the start, stop, and increment values: 1
+2
+0.5
+The logarithm of 1.00000E+00is  0.00000E+00
+The logarithm of 1.50000E+00is  1.76091E-01
+The logarithm of 2.00000E+00is  3.01030E-01
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ exit
+
+Script done on 2022-02-02 09:58:32-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-02 09:58:48-05:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="142" LINES="12"]
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ cat logTable.clj
+;;;; logTable.clj displays a table of logarithms.
+;;;;
+;;;; Input: start, stop and increment, three numbers.
+;;;; Precondition: start < stop && increment > 0.
+;;;; Output: A table of logarithms from start to stop,
+;;;;          with interval of increment.
+;;;;
+;;;; Begun by: Prof. Adams, for CS 214 at Calvin College.
+;;;; Completed by: David Yoo (gy24)
+;;;; Date: 01/31/2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns logTable)                                 ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; displayLogTable() recursively generates the log-table.
+;;; Receive: start the first value for the table;
+;;;          stop, the last  value for the table;
+;;;           step, the step value for the table;
+;;; Precondition: start < stop && increment > 0.
+;;; Output: The table of logs from start to stop, by step.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; direct-recursive version
+
+;; direct-recursive version
+(defn displayLogTable [start, stop, step]
+  (if (<= start stop)
+    (do
+      (printf "The logarithm of %f is %f\n" start (Math/log10 start))
+      (displayLogTable (+ start step) stop step)
+    )
+  )
+)
+
+
+
+;; loop (indirect-recursion) version
+(defn displayLogTable2 [start stop step]
+  (loop [i start]                           ; set i to start
+    (when (<= i stop)                       ; if i <= stop:
+      (printf "The logarithm of %f is %f\n" ;  print one line
+                  i (Math/log10 i)
+      )
+      (recur (+ i step))                    ; recurse, i += step
+    )
+  )
+)
+
+
+;; indirect/tail-recursive version (just using recur)
+(defn displayLogTable3 [start stop step]
+  (if (<= start stop)                     ; if start <= stop:
+    (do                                      ; do these two things:
+      (printf "The logarithm of %f is %f\n"  ; - print one line
+                  start (Math/log10 start)
+      )
+      (recur (+ start step) stop step)       ; - recurse, start+=step
+    )
+  )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; -main is a 'driver' for the displayLogTable() functions.
+;;; Input: start, stop and increment.
+;;; Output: The table of logarithms 
+;;;          from start to stop by increment
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn -main []
+ (println "To display a table of logarithms,")
+ (print " enter the start, stop, and increment values: ") (flush)
+ (let
+    [ start (double (read))
+      stop (double (read))
+      increment (double (read))
+    ] 
+    (println)
+    (displayLogTable start stop increment) 
+    (println)
+    (displayLogTable2 start stop increment) 
+    (println)
+    (displayLogTable3 start stop increment) 
+    (println)
+ )
+)
+
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ clojure -m logTable
+To display a table of logarithms,
+ enter the start, stop, and increment values: 1
+2
+0.5
+
+The logarithm of 1.000000 is 0.000000
+The logarithm of 1.500000 is 0.176091
+The logarithm of 2.000000 is 0.301030
+
+The logarithm of 1.000000 is 0.000000
+The logarithm of 1.500000 is 0.176091
+The logarithm of 2.000000 is 0.301030
+
+The logarithm of 1.000000 is 0.000000
+The logarithm of 1.500000 is 0.176091
+The logarithm of 2.000000 is 0.301030
+
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ exit
+
+Script done on 2022-02-02 09:59:24-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-02 09:59:41-05:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="142" LINES="12"]
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ cat c[KlogTable.rb
+#! /usr/bin/ruby
+# logTable.rb displays a table of logarithms
+#
+# Begun by: Prof. Adams, for CS 214 at Calvin College.
+# Completed by: David Yoo (gy24)
+#
+# Input:  The start, stop and increment values
+# Precondition: The start value is less than the stop value, 
+#     and the increment is greater than 0
+# Output: A table of logarithms from start to stop, with increment
+#     as the step value
+
+
+if __FILE__ == $0
+   print "Enter the start value: "
+#### ADD CODE HERE TO GET THESE VALUES AS NUMBERS
+   start = gets.chomp.to_f
+   print "Enter the stop value: "
+####
+   stop = gets.chomp.to_f
+   print "Enter the increment value: "
+####   
+   increment = gets.chomp.to_f
+   
+#  Replace this line with a loop to display the log table 
+while start <= stop do
+	res = Math.log10(start)
+	print "The logarithm of #{start} is #{res} \n"
+	start = start + increment
+   end
+end
+
+
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ ruby logTable.rb
+Enter the start value: 1
+Enter the stop value: 2
+Enter the increment value: 0.5
+The logarithm of 1.0 is 0.0 
+The logarithm of 1.5 is 0.17609125905568124 
+The logarithm of 2.0 is 0.3010299956639812 
+]0;gy24@gold26: ~/cs214/labs/04[01;32mgy24@gold26[00m:[01;34m~/cs214/labs/04[00m$ exit
+
+Script done on 2022-02-02 10:00:11-05:00 [COMMAND_EXIT_CODE="0"]

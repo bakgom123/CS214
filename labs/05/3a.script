@@ -1,0 +1,13 @@
+Script started on 2022-02-09 16:23:53-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> script 3a.script[C[C[C[C[C[C[C(negate [-1 -2 -3])[C[C[C[C[C[C[C[Cdefn negate [sequence] (map (fn [x] (- 0 x)) sequence))[C[C[C[C[C[C[C[Cnegate [-1 -2 -3])[K[C[C[C[C[C[C[C[Cdefn negate [sequence] (map (fn [x] (- 0 x)) sequence))[C[C[C[C[C[C[C[K(defn negate [sequence] (map (fn [x] (- 0 x)) sequence))
+[K#'user/negate
+user=> [Kuser=> [Kuser=> (negate [-1 2 -3][C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K(negate [-1 2 -3])
+(1 -2 3)
+user=> [Kuser=> [Kuser=> (negate [-1 2 -3])[C[C[C[C[C[1P])[1P])[1P])[1P])[1P])[1P])[1P])4]) ])-])5]) ])6])[C[C[C[C[C[C[C[K(negate [4 -5 6])
+(-4 5 -6)
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 16:24:39-05:00 [COMMAND_EXIT_CODE="0"]

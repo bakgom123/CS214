@@ -1,0 +1,13 @@
+Script started on 2022-02-09 14:47:49-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="271" LINES="30"]
+]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y] (+ (* x x) {* y y))) 3 4)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15P] (+ x x)) 21)[C[C[C[C[C[C[C[C[4Pfn [x] (+ x x) )[C[C[C[C[C[C[C[C(fn [x y] (+ (* x x) (* y y))) 3 4)[C[C[C[C[C[C[C[C[19Pfn [x] (+ x x) )[C[C[C[C[C[C[C[K(fn [x] (+ x x) )
+[K#object[user$eval136$fn__137 0x5432050b "user$eval136$fn__137@5432050b"]
+user=> [Kuser=> [Kuser=> (fn [x] (+ x x) )[C[C[C[C[C[C[C[C(fn [x y] (+ (* x x) {* y y))) 3 4)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15P] (+ x x)) 21)[C[C[C[C[C[C[C[K((fn [x] (+ x x)) 21)
+42
+user=> [Kuser=> [Kuser=> ((fn [x] (+ x x)) 21)[C[C[C[C[C[C[C[C[4Pfn [x] (+ x x) )[C[C[C[C[C[C[C[C(fn [x y] (+ (* x x) {* y y))) 3 4)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15P] (+ x x)) 21)[C[C[C[C[C[C[C[C[4Pfn [x] (+ x x) )[C[C[C[C[C[C[C[C(fn [x y] (+ (* x x) (* y y))) 3 4)[C[C[C[C[C[C[C[K((fn [x y] (+ (* x x) (* y y))) 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;gy24@remotel3: ~/cs214/labs/05[01;32mgy24@remotel3[00m:[01;34m~/cs214/labs/05[00m$ exit
+
+Script done on 2022-02-09 14:48:16-05:00 [COMMAND_EXIT_CODE="0"]
