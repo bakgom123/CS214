@@ -1,0 +1,84 @@
+Script started on 2022-01-14 17:23:27-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+]0;gy24@gold32: ~/cs214/projects/01/clojure[01;32mgy24@gold32[00m:[01;34m~/cs214/projects/01/clojure[00m$ cat rectangle_area.clj
+;;;; rectangle_area.clj calculates the area of a rectangle.
+;;;;
+;;;; Input: The width and height of a rectangle.
+;;;; Output: The area of that rectangle.
+;;;;
+;;;; Usage: clojure -m rectangle_area
+;;;;
+;;;; Begun by: Prof. Adams, for CS 214 at Calvin College.
+;;;; Completed by: David Yoo (gy24)
+;;;; Date: 1/14/2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns rectangle_area) ; namespace function names the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Function rectangleArea() computes the area of a rectangle.
+;;; Receive: itsWidth, itsHeight, a number.
+;;; Precondition: itsWidth >= 0.0, itsHeight >= 0.0.
+;;; Return: the area of the corresponding rectangle.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn rectangleArea [itsWidth, itsHeight]
+  (* itsWidth itsHeight )  ; return width * height
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Function -main is where execution begins
+;;; Input: the width and height of a rectangle.
+;;; Output: the area of that rectangle.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main [] 
+   
+    (def width)
+    (def height)
+    (println "\nTo compute the area of a rectangle,")
+    (print " enter its width: ") (flush) 
+    
+
+    (let [width (read)] 
+    (assert (> width 0) "-main: width must be positive")
+            
+        (print "\n enter its height: " ) (flush)
+
+        (let [height (read)]
+        (assert (> height 0) "-main: height must be positive")
+
+        (print "\nThe area is ")
+        (print (rectangleArea width height))
+        (print "\n\n")
+
+        )
+    )
+)]0;gy24@gold32: ~/cs214/projects/01/clojure[01;32mgy24@gold32[00m:[01;34m~/cs214/projects/01/clojure[00m$ clojure -m rectangle_area
+
+To compute the area of a rectangle,
+ enter its width: 1
+
+ enter its height: 1
+
+The area is 1
+
+]0;gy24@gold32: ~/cs214/projects/01/clojure[01;32mgy24@gold32[00m:[01;34m~/cs214/projects/01/clojure[00m$ clojure -m rectangle_area
+
+To compute the area of a rectangle,
+ enter its width: 2
+
+ enter its height: 3
+
+The area is 6
+
+]0;gy24@gold32: ~/cs214/projects/01/clojure[01;32mgy24@gold32[00m:[01;34m~/cs214/projects/01/clojure[00m$ clojure -m rectangle_area
+
+To compute the area of a rectangle,
+ enter its width: 12
+
+ enter its height: 14
+
+The area is 168
+
+]0;gy24@gold32: ~/cs214/projects/01/clojure[01;32mgy24@gold32[00m:[01;34m~/cs214/projects/01/clojure[00m$ exit
+exit
+
+Script done on 2022-01-14 17:24:20-05:00 [COMMAND_EXIT_CODE="0"]

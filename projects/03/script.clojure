@@ -1,0 +1,76 @@
+Script started on 2022-01-26 14:39:24-05:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="101" LINES="12"]
+]0;gy24@maroon25: ~/cs214/projects/03/clojure/src[01;32mgy24@maroon25[00m:[01;34m~/cs214/projects/03/clojure/src[00m$ clojure -m grade_codes[3Pat grade_codes.clj
+;;;; grade_codes.clj is a driver for function gradeCode.
+;;;;
+;;;; Input: score in integer
+;;;; Output: the letter grade in string
+;;;;
+;;;; Usage: clojure -m grade_codes
+;;;;
+;;;; Created by: David Yoo (gy24)
+;;;; Date: 01/26/2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns grade_codes)                    ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; gradeCode() returns the letter grade in string.
+;;; Receive: score, an integer.
+;;; Precondition: score is a non-negative integer, and it's less than or equal to 100
+;;; Return: the letter grade in string.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; solution using the case function
+(defn gradeCode [score]
+  (case (quot score 10)
+    (9 10)  "A"
+    (8) "B"
+    (7) "C"
+    (6) "D"
+        "F"
+  )
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Function -main() test-drives our gradeCode() function.
+;;; Input: score in integer
+;;; Output: the letter grade in string
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+ (print "\nEnter your score: ") (flush)
+ (let
+    [ score (read) ]                ; read score (an integer)
+    (println (gradeCode score) "\n")      ; display the letter grade
+ )
+)
+
+]0;gy24@maroon25: ~/cs214/projects/03/clojure/src[01;32mgy24@maroon25[00m:[01;34m~/cs214/projects/03/clojure/src[00m$ cat grade_codes.cljlojure -m grade_codes[3Pat grade_codes.cljlojure -m grade_codes
+
+Enter your score: 99
+A 
+
+]0;gy24@maroon25: ~/cs214/projects/03/clojure/src[01;32mgy24@maroon25[00m:[01;34m~/cs214/projects/03/clojure/src[00m$ clojure -m grade_codes
+
+Enter your score: 88
+B 
+
+]0;gy24@maroon25: ~/cs214/projects/03/clojure/src[01;32mgy24@maroon25[00m:[01;34m~/cs214/projects/03/clojure/src[00m$ clojure -m grade_codes
+
+Enter your score: 77
+C 
+
+]0;gy24@maroon25: ~/cs214/projects/03/clojure/src[01;32mgy24@maroon25[00m:[01;34m~/cs214/projects/03/clojure/src[00m$ clojure -m grade_codes
+
+Enter your score: 66
+D 
+
+]0;gy24@maroon25: ~/cs214/projects/03/clojure/src[01;32mgy24@maroon25[00m:[01;34m~/cs214/projects/03/clojure/src[00m$ clojure -m grade_codes
+
+Enter your score: 55
+F 
+
+]0;gy24@maroon25: ~/cs214/projects/03/clojure/src[01;32mgy24@maroon25[00m:[01;34m~/cs214/projects/03/clojure/src[00m$ exit
+
+Script done on 2022-01-26 14:39:53-05:00 [COMMAND_EXIT_CODE="0"]

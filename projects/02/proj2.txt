@@ -1,0 +1,159 @@
+//CS 214 :: project 2
+//Created by: David Yoo (gy24)
+//Date: 01/22/2022
+
+Using these ideas, define the constructs below with BNF productions. Underline the terminals in your productions, to distinguish them from the nonterminals. You may assume that the following have already been defined:
+   <letter>   ::=   A | B | C | D | E | F | G | H | I | J | K | L 
+                    | M | N | O | P | Q | R | S | T | U | V | W 
+                    | X | Y | Z | a | b | c | d | e | f | g | h
+                    | i | j | k | l | m | n | o | p | q | r | s
+                    | t | u | v | w | x | y | z
+   <digit>   ::=   0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+   
+   
+1. A Java character literal
+
+<char_literal> ::= <valid_sequence>
+<valid_sequence> ::= <valid_characters> | <valid_characters><valid_sequence>
+<valid_characters> ::= <letter> | <digit> | <symbols> | <escape_sequence>
+<symbols> ::= ` | ~ | ! | @ | # | $ | % | ^ | & |  * | ( | ) | " | 
+<escape_sequence> ::= \t | \b | \n | \t | \f | \' | \" | \\ | 
+
+
+
+2. A Java character string literal
+
+<str_literal> ::= <valid_sequence>
+<valid_sequence> ::= <valid_characters> | <valid_characters> <valid_sequence>
+<valid_characters> ::= <letter> | <digit> | <symbols> 
+<symbols> ::= ` | ~ | ! | @ | # | $ | % | ^ | & |  * | ( | ) | " | 
+
+
+
+3. A Java integer literal
+
+<int_literal> ::= <valid_sequence>
+<valid_sequence> ::= <dec_literal> <type_suffix> | <hex_suffix> <hex_literals> <type_suffix> | <oct_literal> <type_suffix> | <binary_literal>
+<hex_suffix> ::== 0x | 0X
+<type_suffix> ::= l | L
+<dec_literal> ::= <dec_digit> | <dec_digit> <dec_literal> 
+<oct_literal> ::= <oct number> | <oct_digit> <oct_literal>
+<hex_literal> ::= <hex_digit> | <hex_digit> <hex_literal> 
+<binary_literal> ::= <binary_digit> | <binary_digit> <binary_literals>
+<dec_digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9|
+<oct_digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+<hex_digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | A | B | C | D | E | F | a | b | c | d | e | f
+<binary_digit> ::== 0 | 1
+
+
+
+4. A Java real (floating point) literal
+
+<Real_lit> ::== <whole_numb>"."<decimal_numb>
+<whole_numb> ::== <digit> | <digit> <whole_numb> 
+<decimal_numb> ::== <decimal_numb> | <decimal_type> <decimal_numb>
+<decimal_type> ::== <digit> | <exponent> | <suffix> | <sign>
+<exponent> ::== e | E
+<suffix> ::== d | D | f | F
+<sign> ::== + | -
+
+
+
+5. A Java identifier:
+
+<identifier> ::== <initial> | <initial> <more>
+<initial> ::== <letter> | _ | $
+<more> ::== <final> | <more> <final>
+<final> ::== <initial> | <digit>
+
+
+
+6. A Java function declaration (prototype):
+
+<Function_Declaration> ::== <method_header> <method_body> 
+<method_header> ::== <modifier_type> <return_type> <method_name> | <modifier> <return_type> <method_name>"("<parameter_list>")"
+<modifier_type> ::== <modifier> | <modifier> <modifier_type> 
+<method_name> ::== "user input"
+<parameter_list> ::== <parameter> | <parameter> "," <parameter_list>
+<parameter> ::== <return_type>" "<argument_variable> 
+<argument_variable> ::== "user input"
+<modifier>::== public | private | protected | static | abstracct | final | synchronized | native
+<return_type> :: <data_types>
+<method_body> :: <>
+
+
+
+7. A Java if statement (you may assume that the nonterminals <statement> and <expression> are defined elsewhere):
+
+<if_statement> ::== if <expression> then <statement> <else part>
+<else part> ::== else <statement> | E
+
+
+
+8. A Java while statement (you may assume that the nonterminals <statement> and <expression> are defined elsewhere):
+
+<while_statement> ::== while <expression> then <statement>
+
+
+
+9. Prove that the following grammar is ambiguous:
+<S> ::= <A>
+<A> ::= <A> + <A> | <id>
+<id> ::= a | b | c
+
+Since <A> will repeat itself, and it will create 2 parse trees for the id 'a','b','c'
+However, the seperated parse trees are ambiguity.
+Therefore, this grammar is ambiguos.
+
+
+
+10. Give a left-most derivation for A = A * (B + C) using the following BNF grammar:
+<assign> ::= <id> = <expr>
+<id> ::= A | B | C
+<expr> ::= <expr> + <term> | <term>
+<term> ::= <term> * <factor> | <factor>
+<factor> ::= ( <expr> ) | <id>
+
+
+<assign> --> <id> = <expr>	
+	      <A> = <term>
+	      <A> = <term> * <factor>
+	      <A> = <factor> * <factor> 
+	      <A> = <id> * <factor>
+	      <A> = <A> * <factor>
+	      <A> = <A> * <expr>
+	      <A> = <A> * <term>
+	      <A> = <A> * <factor>
+	      <A> = <A> * (<expr>)
+	      <A> = <A> * (<expr>+<term>)
+	      <A> = <A> * (<term>+<term>)
+	      <A> = <A> * (<factor>+<term>)
+	      <A> = <A> * (<id>+<term>)
+	      <A> = <A> * (<B>+<term>)
+	      <A> = <A> * (<B>+<factor>)
+	      <A> = <A> * (<B>+<C>)
+	      =A = A * (B+C)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
