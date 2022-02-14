@@ -1,0 +1,60 @@
+Example1
+- There is a function call when it is in the case of EOF, it seems like it will terminate when it reaches the end of the file
+- When it is in the case of YY_END_OF_BUFFER, yy_amount_of_matched_text stores the amount of "text matched not including the EOB char" as am integer
+
+Exmaple2
+- it returns underscore again
+- this is because we did not assign anything to let the program execute anything when we enter underscore
+
+Example3 output
+gy24@gold33:~/cs214/labs/02$ ./example3  < StudentInfo.h
+KEYWORD: class
+IDENTIFIER: StudentInfo
+PUNCTUATION: {
+KEYWORD: public
+PUNCTUATION: :
+IDENTIFIER: StudentInfo
+PUNCTUATION: (
+PUNCTUATION: )
+PUNCTUATION: {
+IDENTIFIER: myGPA
+OPERATOR: =
+DOUBLE: 0.0 (0)
+PUNCTUATION: ;
+IDENTIFIER: myHours
+OPERATOR: =
+INTEGER: 0 (0)
+PUNCTUATION: ;
+PUNCTUATION: }
+IDENTIFIER: StudentInfo
+PUNCTUATION: (
+KEYWORD: double
+IDENTIFIER: gpa
+PUNCTUATION: ,
+KEYWORD: int
+IDENTIFIER: hours
+PUNCTUATION: )
+PUNCTUATION: {
+IDENTIFIER: myGPA
+OPERATOR: =
+IDENTIFIER: gpa
+PUNCTUATION: ;
+IDENTIFIER: myHours
+OPERATOR: =
+IDENTIFIER: hours
+PUNCTUATION: ;
+PUNCTUATION: }
+KEYWORD: private
+PUNCTUATION: :
+KEYWORD: double
+IDENTIFIER: myGPA
+PUNCTUATION: ;
+KEYWORD: int
+IDENTIFIER: myHours
+PUNCTUATION: ;
+PUNCTUATION: }
+PUNCTUATION: ;
+
+Example4
+- The difference is that the non-terminals are composed with sequence of terminals and non-terminals, and terminals do not have other parts of it.
+- When I enter the valid commend, it has some spaces in front of the output.

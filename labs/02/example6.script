@@ -1,0 +1,93 @@
+Script started on 2022-01-19 11:25:18-05:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="80" LINES="24"]
+]0;gy24@gold33: ~/cs214/labs/02[01;32mgy24@gold33[00m:[01;34m~/cs214/labs/02[00m$ cat example6.lex
+%{
+#include <stdio.h>
+#include <stdlib.h>           /* atoi() */
+#include <string.h>           /* strcmp() */
+#include "example6.tab.h"
+%}
+%%
+[0-9]+                  yylval = atoi(yytext); return NUMBER;
+heat                    return TOKHEAT;
+on|off                  yylval = !strcmp(yytext,"on"); return STATE;
+set                     return TOKSET;
+temperature             return TOKTEMPERATURE;
+humidity                return TOKHUMIDITY;
+\n                      /* ignore end of line */;
+[ \t]+                  /* ignore whitespace */;
+%%]0;gy24@gold33: ~/cs214/labs/02[01;32mgy24@gold33[00m:[01;34m~/cs214/labs/02[00m$ cat example6.y
+%{
+#include <stdio.h>
+#include <string.h>
+
+/* declarations */
+int yylex (void);
+void yyerror (char const *);
+int yyparse(void);
+
+/* definitions */ 
+void yyerror(const char *str) {
+        fprintf(stderr,"error: %s\n",str);
+}
+ 
+int yywrap() {
+        return 1;
+} 
+ 
+int main() {
+        yyparse();
+} 
+
+%}
+
+%token NUMBER TOKHEAT STATE TOKSET TOKHUMIDITY TOKTEMPERATURE
+%%
+
+commands: /* empty */
+        | commands command
+        ;
+
+command:
+        heat_switch
+        | temperature_set
+        | humidity_set
+        ;
+
+heat_switch:
+        TOKHEAT STATE
+        {
+                if ($2) {  /* if STATE == 1 */
+                        printf("\tHeat turned on\n");
+                } else {
+                        printf("\tHeat turned off\n");
+                }
+        }
+        ;
+
+temperature_set: 
+        TOKSET TOKTEMPERATURE NUMBER
+        {
+                printf("\tTemperature set to %d\n",$3);
+        }
+        ;
+
+humidity_set: 
+        TOKSET TOKHUMIDITY NUMBER
+        {
+                printf("\tHumidity set to %d\n",$3);
+        }
+        ;]0;gy24@gold33: ~/cs214/labs/02[01;32mgy24@gold33[00m:[01;34m~/cs214/labs/02[00m$ flex example6.lex
+]0;gy24@gold33: ~/cs214/labs/02[01;32mgy24@gold33[00m:[01;34m~/cs214/labs/02[00m$ bison -d example6.y
+]0;gy24@gold33: ~/cs214/labs/02[01;32mgy24@gold33[00m:[01;34m~/cs214/labs/02[00m$ gcc lex.yy.c ea xample6.tav b.c -o example6
+]0;gy24@gold33: ~/cs214/labs/02[01;32mgy24@gold33[00m:[01;34m~/cs214/labs/02[00m$ ./example6
+se  heat on
+	Heat turned on
+heat oi ff
+	Heat turned off
+set temperature 24
+	Temperature set to 24
+set humidity 55
+	Humidity set to 55
+]0;gy24@gold33: ~/cs214/labs/02[01;32mgy24@gold33[00m:[01;34m~/cs214/labs/02[00m$ cat example6.script                   exit
+
+Script done on 2022-01-19 11:27:20-05:00 [COMMAND_EXIT_CODE="0"]
