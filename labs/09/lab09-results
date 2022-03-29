@@ -1,0 +1,479 @@
+Script started on 2022-03-17 13:49:16-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="151" LINES="12"]
+]0;gy24@gold30: ~/cs214/labs/09/java[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/java[00m$ cat[K[K[Kcat Name.java
+/* Name.java implements class Name.
+ * Begun by: Prof. Adams, for CS 214 at Calvin College.
+ * Student: David Yoo (gy24)
+ * Date: Mar 17, 2022
+ ************************************************************/
+
+class Name {
+
+    // Name object constructor with initialization  
+    public Name(final String first, final String middle, final String last) {
+        myFirst = first;
+        myMiddle = middle;
+        myLast = last;
+    }
+   
+    // extractor for first name of a Name object
+    public final String getFirst() {
+        return myFirst;
+    }
+  
+    // extractor for middle name of a Name object
+    public final String getMiddle() {
+        return myMiddle;
+    }
+  
+    // extractor for last name of a Name object
+    public final String getLast() {
+        return myLast;
+    }
+    
+    // return string created by piecing together first, middle, and last names
+    public final String toString() {
+        return myFirst + ' ' + myMiddle + ' ' + myLast;
+    }
+  
+    private String myFirst, myMiddle, myLast;  // private instance variables
+  }
+]0;gy24@gold30: ~/cs214/labs/09/java[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/java[00m$ cat NametES[K[K[KTester.java
+/* NameTester.java is a 'driver' to test class Name.
+ * Begun by: Prof. Adams, for CS 214 at Calvin College.
+ * Student: David Yoo (gy24)
+ * Date: Mar 17, 2022
+ ************************************************************/
+
+public class NameTester  
+{
+  public static void main(String[] args)
+  {
+      Name aName = new Name("John", "Paul", "Jones");
+
+      assert aName.getFirst().equals("John") ;
+      assert aName.getMiddle().equals("Paul") ;
+      assert aName.getLast().equals("Jones") ;
+
+      System.out.println(aName);
+      assert aName.toString().equals("John Paul Jones");
+
+      System.out.println("All tests passed!");
+  }
+}
+
+// the Name class appears outside of the rest of the program
+
+
+]0;gy24@gold30: ~/cs214/labs/09/java[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/java[00m$ javac -deprecation Name.java
+]0;gy24@gold30: ~/cs214/labs/09/java[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/java[00m$ javac -dee[Kprecation NameTester.java
+]0;gy24@gold30: ~/cs214/labs/09/java[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/java[00m$ java NameTester
+John Paul Jones
+All tests passed!
+]0;gy24@gold30: ~/cs214/labs/09/java[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/java[00m$ exit
+
+Script done on 2022-03-17 13:50:00-04:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-03-17 14:41:10-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="151" LINES="12"]
+]0;gy24@gold30: ~/cs214/labs/09/ada[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ada[00m$ cat name_package.adb
+-- name_package.adb defines operations for the Name type.
+--
+-- Begun by: Dr. Adams, CS 214 at Calvin College.
+-- Completed by: David Yoo (gy24)
+-- Date: Mar 17, 2022
+---------------------------------------------------------
+
+with Ada.Text_IO; use Ada.Text_IO;
+
+package body Name_Package is
+   ----------------------------------------------
+   -- Init initializes a Name variable          
+   -- Receive: Nm, the Name variable;          
+   --          First, the first name;         
+   --          Middle, the middle name;      
+   --          Last, the last name.         
+   -- Return: Nm, its fields set to First, 
+   --               Middle, and Last.     
+   ----------------------------------------------
+
+   procedure Init(Nm: out Name;
+		  First, Middle, Last : in String) is
+   begin
+      Nm.MyFirst := First;
+      Nm.MyMiddle := Middle;
+      Nm.MyLast := Last;
+   end Init;
+   
+   ----------------------------------------------
+   -- getFirst(Name) retrieves Name.myFirst        
+   -- Receive: Nm, a Name.                      
+   -- PRE: Nm has been initialized.            
+   -- Return: Nm.myFirst.                     
+   ----------------------------------------------
+   function getFirst( Nm: in Name) return String is
+   begin
+      return Nm.MyFirst;
+   end getFirst;
+   
+   ----------------------------------------------
+   -- getMiddle(Name) retrieves Name as a String 
+   -- Receive: Nm, a Name.        
+   -- PRE: Nm has been initialized.
+   -- Return: Nm.myMiddle. 
+   ----------------------------------------------
+   function getMiddle( Nm: in Name) return String is
+   begin
+      return Nm.MyMiddle;
+   end getMiddle;
+   
+   ----------------------------------------------
+   -- getLast(Name) retrieves Name.myLast       
+   -- Receive: Nm, a Name.                    
+   -- PRE: Nm has been initialized.            
+   -- Return: Nm.myLast.                        
+   ----------------------------------------------
+   function getLast( Nm: in Name) return String is
+   begin
+      return Nm.MyLast;
+   end getLast;
+   
+   ----------------------------------------------
+   -- getFullName(Name) retrieves Name as a String -
+   -- Receive: Nm, a Name.                      -
+   -- PRE: Nm has been initialized.             -
+   -- Return: a String representation of Nm.    -
+   ----------------------------------------------
+   function getFullName( Nm: in Name) return String is
+   begin
+      return Nm.MyFirst & " "
+	& Nm.MyMiddle & " "
+	& Nm.MyLast;
+   end getFullName;
+   
+   ----------------------------------------------
+   -- Put(Name) displays a Name value.          -
+   -- PRE: Nm has been initialized.             -
+   -- Receive: Nm, a Name.                      -
+   -- Output: Nm, to the screen.                -
+   ----------------------------------------------
+   procedure Put(Nm: in Name) is
+   begin
+      Put( getFullName(Nm) );
+   end Put;
+end Name_Package;]0;gy24@gold30: ~/cs214/labs/09/ada[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ada[00m$ cat name_package.ads
+-- name_package.ads declares the Name type and its operations.
+--
+-- Begun by: Dr. Adams, CS 214 at Calvin College.
+-- Completed by: David Yoo (gy24)
+-- Date: Mar 17, 2022
+--------------------------------------------------------------
+
+package Name_Package is
+    type Name is private;
+   
+   ----------------------------------------------
+   -- Init initializes a Name variable          
+   -- Receive: Nm, the Name variable;          
+   --          First, the first name;         
+   --          Middle, the middle name;      
+   --          Last, the last name.         
+   -- Return: Nm, its fields set to First, 
+   --               Middle, and Last.     
+   ----------------------------------------------
+
+   procedure Init(Nm: out Name;
+		  First, Middle, Last : in String);
+   
+   ----------------------------------------------
+   -- getFirst(Name) retrieves Name.myFirst        
+   -- Receive: Nm, a Name.                      
+   -- PRE: Nm has been initialized.            
+   -- Return: Nm.myFirst.                     
+   ----------------------------------------------
+   function getFirst( Nm: in Name) 
+   return String;
+
+   ----------------------------------------------
+   -- getMiddle(Name) retrieves Name as a String 
+   -- Receive: Nm, a Name.        
+   -- PRE: Nm has been initialized.
+   -- Return: Nm.myMiddle. 
+   ----------------------------------------------
+   function getMiddle( Nm: in Name) 
+   return String;
+
+   ----------------------------------------------
+   -- getLast(Name) retrieves Name.myLast       
+   -- Receive: Nm, a Name.                    
+   -- PRE: Nm has been initialized.            
+   -- Return: Nm.myLast.                        
+   ----------------------------------------------
+   function getLast( Nm: in Name) 
+   return String;
+
+   ----------------------------------------------
+   -- getFullName(Name) retrieves Name as a String -
+   -- Receive: Nm, a Name.                      -
+   -- PRE: Nm has been initialized.             -
+   -- Return: a String representation of Nm.    -
+   ----------------------------------------------
+   function getFullName( Nm: in Name) 
+   return String;
+   
+   ----------------------------------------------
+   -- Put(Name) displays a Name value.          -
+   -- PRE: Nm has been initialized.             -
+   -- Receive: Nm, a Name.                      -
+   -- Output: Nm, to the screen.                -
+   ----------------------------------------------
+   procedure Put(Nm: in Name);
+   
+   private
+      NAME_SIZE : constant Positive := 8;
+
+      type Name is
+	 record
+	    myFirst,
+	    myMiddle,
+	    MyLast : String(1..NAME_SIZE);
+	 end record;
+
+end Name_Package;]0;gy24@gold30: ~/cs214/labs/09/ada[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ada[00m$ cat name_tester.adb
+-- name_tester.adb "test-drives" the Name type.
+--
+-- Begun by: Dr. Adams, CPSC 280, October 1999.
+-- Completed by: David Yoo (gy24)
+-- Date: Mar 17, 2022
+----------------------------------------------
+
+with Ada.Text_IO, Name_Package; use Ada.Text_IO, Name_Package;
+
+procedure name_tester is
+  aName : Name_Package.Name;
+begin
+   Name_Package.Init(aName, "John    ", "Paul    ", "Jones   ");
+
+   pragma Assert( getFirst(aName) = "John    ",
+                   "getFirst() failed");
+   pragma Assert( getMiddle(aName) = "Paul    ", 
+                   "getMiddle() failed");
+   pragma Assert( getLast(aName) = "Jones   ", 
+                   "getLast() failed");
+   pragma Assert( getFullName(aName) = "John     Paul     Jones   ",
+                    "getFullName() failed");
+   Put(aName); New_line;
+   Put("All tests passed!"); New_line;
+end name_tester;
+
+]0;gy24@gold30: ~/cs214/labs/09/ada[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ada[00m$ gnatmake name_ts[K[Kester[K[K[K[K[Ktester
+gnatmake: "name_tester" up to date.
+]0;gy24@gold30: ~/cs214/labs/09/ada[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ada[00m$ ./name_tester
+John     Paul     Jones   
+All tests passed!
+]0;gy24@gold30: ~/cs214/labs/09/ada[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ada[00m$ exit
+
+Script done on 2022-03-17 14:41:55-04:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-03-17 14:52:37-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="151" LINES="12"]
+]0;gy24@gold30: ~/cs214/labs/09/clojure[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/clojure[00m$ cd src
+]0;gy24@gold30: ~/cs214/labs/09/clojure/src[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/clojure/src[00m$ cat Name.clj
+;; Name.clj is a module for our 'Name' type-abstraction.
+;;
+;; Begun by: Prof. Adams, for CS 214 at Calvin College.
+;; Completed by: David Yoo (gy24)
+;; Date: Mar 17, 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Replace this line with the Name-related functions from nameTester.clj
+;; Create a record/struct type named Name
+(defrecord Name [firstName middleName lastName])
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; make-Name constructs a Name object from three strings. 
+;; Receive: firstN, middleN and lastN, three strings.
+;; Return: the Name (firstN middleN lastN). 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn make-Name [firstN middleN lastN]
+  (->Name firstN middleN lastN)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; getFirst extracts the first name of a name object.
+;; Receive: aName, a Name.
+;; Return: the firstName string in aName.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn getFirst [aName]
+  (:firstName aName)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; getMiddle extracts the middle name of a name object.
+;; Receive: aName, a Name. 
+;; Return: the middleName string in aName.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn getMiddle [aName]
+  (:middleName aName)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; getLast extracts the last name of a name object.
+;; Receive: aName, a Name. 
+;; Return: the lastName string in aName.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn getLast [aName]
+  (:lastName aName)
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; toString converts a Name to a string
+;; Receive: aName, a Name. 
+;; Return: a string containing firstName, middleName, lastName,
+;;           separated by spaces. 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn toString [aName]
+  (str (getFirst aName) " " (getMiddle aName) " " (getLast aName))
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; printName displays a name object. 
+;; Receive: aName, a Name, 
+;; Output: the string representation of aName. 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn printName [aName]
+  (print (toString aName) )
+)
+]0;gy24@gold30: ~/cs214/labs/09/clojure/src[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/clojure/src[00m$ cat nameTester.clj
+;; nameTester.clj tests a Clojure Name type,
+;;  stored in Name.clj (in the src directory).
+;;
+;; Output: the results of testing the Name functions.
+;;
+;; Usage: clojure -m nameTester
+;;
+;; Begun by: Prof. Adams, CS 214 at Calvin College.
+;; Completed by: David Yoo (gy24)
+;; Date: Mar 17, 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns nameTester)
+;;(load "Name")
+(load-file "src/Name.clj")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; A simple driver to test our Name functions. 
+;; Output: the results of testing our Name functions.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+  (let
+    [                                          ; 3 ways to construct an object:
+      name1 (make-Name "John" "Paul" "Jones")  ; -using our "make-" constructor
+      name2 (->Name "Jane" "Penelope" "Jones") ; -invoking constructor directly
+                                               ; -mapping field-names to values
+      name3 (map->Name {:lastName "Jones" :firstName "Jinx" :middleName "Joy"})
+    ]
+    ;; ----- SECTION 1 -----
+    (println)
+    (print name1) (println)
+    (assert (= (getFirst name1) "John") "getFirst(1) failed")
+    (assert (= (getMiddle name1) "Paul") "getMiddle(1) failed")
+    (assert (= (getLast name1) "Jones") "getLast(1) failed")
+    (assert (= (toString name1) "John Paul Jones") "toString(1) failed")
+    (printName name1) (println)
+    ;; ----- SECTION 2 -----
+    (println)
+    (print name2) (println)
+    (assert (= (getFirst name2) "Jane") "getFirst(2) failed")
+    (assert (= (getMiddle name2) "Penelope") "getMiddle(2) failed")
+    (assert (= (getLast name2) "Jones") "getLast(2) failed")
+    (assert (= (toString name2) "Jane Penelope Jones") "toString(2) failed")
+    (printName name2) (println)
+    ;; ----- SECTION 3 -----
+    (println)
+    (print name3) (println)
+    (assert (= (getFirst name3) "Jinx") "getFirst(3) failed")
+    (assert (= (getMiddle name3) "Joy") "getMiddle(3) failed")
+    (assert (= (getLast name3) "Jones") "getLast(3) failed")
+    (assert (= (toString name3) "Jinx Joy Jones") "toString(3) failed")
+    (printName name3) (println)
+
+    (println "\nAll tests passed!\n")
+  )
+)
+
+
+]0;gy24@gold30: ~/cs214/labs/09/clojure/src[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/clojure/src[00m$ cd ..
+]0;gy24@gold30: ~/cs214/labs/09/clojure[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/clojure[00m$ clojure -nameTester[K[K[K[K[K[K[K[K[K[Km nameTester
+
+#nameTester.Name{:firstName John, :middleName Paul, :lastName Jones}
+John Paul Jones
+
+#nameTester.Name{:firstName Jane, :middleName Penelope, :lastName Jones}
+Jane Penelope Jones
+
+#nameTester.Name{:firstName Jinx, :middleName Joy, :lastName Jones}
+Jinx Joy Jones
+
+All tests passed!
+
+]0;gy24@gold30: ~/cs214/labs/09/clojure[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/clojure[00m$ exit
+
+Script done on 2022-03-17 14:53:57-04:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-03-17 15:04:44-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="151" LINES="12"]
+]0;gy24@gold30: ~/cs214/labs/09/ruby[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ruby[00m$ cat Name.rb
+# Name.rb has the module Names
+#
+# Begun by: Dr. Adams, for CS 214 at Calvin College.
+# Completed by: David Yoo (gy24)
+# Date: Mar 17, 2022
+####################################################
+
+module Names
+    class Name
+      def initialize(first, middle, last)
+        @first, @middle, @last = first, middle, last
+      end
+  
+      attr_reader :first, :middle, :last
+  
+      def fullName
+        @first + " " + @middle + " " + @last
+      end
+  
+      def print
+        puts fullName
+        fullName
+      end
+    end
+  end]0;gy24@gold30: ~/cs214/labs/09/ruby[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ruby[00m$ cat nameTester.rb
+# nameTester.rb tests class Name and its operations
+#
+# Begun by: Dr. Adams, for CS 214 at Calvin College.
+# Completed by: David Yoo (gy24)
+# Date: Mar 17, 2022
+####################################################
+
+require './Name'
+require 'test/unit/assertions'
+include Test::Unit::Assertions
+
+def testName
+   name = Names::Name.new("John", "Paul", "Jones")
+
+   assert name.first == "John", 
+           "first failed"
+   assert name.middle == "Paul",
+           "middle failed"
+   assert name.last == "Jones",
+           "last failed"
+   assert name.fullName == "John Paul Jones",
+           "fullName failed"
+   assert name.print == "John Paul Jones",
+           "print failed"
+   
+   print "All tests passed!\n"
+end
+
+testName
+]0;gy24@gold30: ~/cs214/labs/09/ruby[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ruby[00m$ ruby nameTester.rb
+John Paul Jones
+All tests passed!
+]0;gy24@gold30: ~/cs214/labs/09/ruby[01;32mgy24@gold30[00m:[01;34m~/cs214/labs/09/ruby[00m$ exit
+
+Script done on 2022-03-17 15:05:07-04:00 [COMMAND_EXIT_CODE="0"]
