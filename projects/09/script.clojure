@@ -1,0 +1,307 @@
+Script started on 2022-03-23 19:45:25-04:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="271" LINES="17"]
+]0;gy24@remotel3: ~/cs214/projects/09/clojure[01;32mgy24@remotel3[00m:[01;34m~/cs214/projects/09/clojure[00m$ cat temperature.clj
+;; functions for temperature conversion
+;; Author: David Yoo (gy24)
+;; Date: 03/22/2022
+
+(require '[clojure.string :as str])
+
+(defrecord Temperature [degree scale])
+
+;; defining the constant: https://stackoverflow.com/questions/9162558/how-does-clojure-const-work
+(def ^:const celsius \C)
+(def ^:const fahrenheit \F)
+(def ^:const kelvin \K)
+
+;; change to uppercase
+;; https://clojuredocs.org/clojure.string/upper-case
+(defn toUpper [chr]
+  (nth (char-array (clojure.string/upper-case chr)) 0)
+)
+
+;; check if the scale is valid
+(defn is-scale-valid? [scale]
+  (let [upper (toUpper scale)]
+    (or (= upper celsius) (= upper kelvin) (= upper fahrenheit))
+    )
+)
+
+;; check if a string is numeric
+(defn isNumeric [str]
+  (try
+     (do
+       (Float/parseFloat str)
+       true)
+     (catch NumberFormatException e false))
+)
+
+;; temperature with a degree and scale
+(defn initial [degree scale]
+  (if (is-scale-valid? scale)
+    (->Temperature degree (toUpper scale))
+    (println "Invalid scale provided to initial."))
+)
+
+;; get the degrees of the temperature
+(defn getTemp [^Temperature temp]
+  (:degree temp)
+)
+
+;; get the scale
+(defn getScale [^Temperature temp]
+  (:scale temp)
+)
+
+;; convert a temperature to Celsius
+(defn toC [^Temperature temp]
+  (if (= kelvin (getScale temp))
+    (initial (- (getTemp temp) 273.15) celsius)
+    (if (= fahrenheit (getScale temp))
+      (initial (* (/ 5.0 9.0) (- (getTemp temp) 32)) celsius)
+      temp))
+)
+
+;; convert a temperature to Fahrenheit
+(defn toF [^Temperature temp]
+  (if (= kelvin (getScale temp))
+    (initial (+ 32 (* (/ 9.0 5.0) (- (getTemp temp) 273.15))) fahrenheit)
+    (if (= celsius (getScale temp))
+      (initial (+ 32 (* (/ 9.0 5.0) (getTemp temp))) fahrenheit)
+      temp))
+)
+
+;; convert a temperature to Kelvin
+(defn toK [^Temperature temp]
+  (if (= celsius (getScale temp))
+    (initial (+ (getTemp temp) 273.15) kelvin)
+    (if (= fahrenheit (getScale temp))
+      (initial (+ (* (/ 5.0 9.0) (- (getTemp temp) 32.0)) 273.15) kelvin)
+      temp))
+)
+
+;; convert temperature into another scale
+(defn convert-temp [temp scale]
+  (if (= scale (getScale temp))
+    temp
+    (if (= scale celsius)
+      (toC temp)
+      (if (= scale kelvin)
+        (toK temp)
+        (if (= scale fahrenheit)
+          (toF temp)
+          ()))))
+)
+
+;; An input operation that lets a Temperature be conveniently input as a single entity (e.g., 98.6 F).
+(defn read-temperature []
+  (let [line (read-line)
+        parts (str/split line #" ")]
+    (if (= 2 (count parts))
+      (let [value-in-string (nth parts 0)
+            scale-in-string (nth parts 1)
+            scale-char (nth (char-array scale-in-string) 0)]
+        (if (= (count scale-in-string) 1)
+          (if (is-scale-valid? scale-char)
+            (if (isNumeric value-in-string)
+              [(initial (Float/parseFloat value-in-string) scale-char) false]
+              [nil true])
+            [nil true])
+          [nil true]))
+      [nil true]))
+)
+
+;; returns the temperature in a string
+(defn to-string [^Temperature temp]
+  (str (format "%.3f" (getTemp temp)) " " (getScale temp))
+)
+
+;; given a Temperature and real degrees, returns a Temperature that is degrees higher than the Temperature received.
+(defn raise [temp amount]
+  (initial (+ amount (getTemp temp)) (getScale temp))
+)
+
+;; given a Temperature and a real degrees, returns a Temperature that is degrees lower than the Temperature received. 
+(defn lower [temp amount]
+  (initial (- (getTemp temp) amount) (getScale temp))
+)
+
+;; given two Temperature operands, returns true if and only if the left operand is equal to the right operand.
+(defn equals? [temp1 temp2]
+ (= (getTemp temp1) (getTemp (convert-temp temp2 (getScale temp1))))
+)
+
+;; given two Temperature operands, returns true if and only if the left operand is less-than the right operand. 
+(defn less-than? [temp1 temp2]
+ (< (getTemp temp1) (getTemp (convert-temp temp2 (getScale temp1))))
+)
+
+]0;gy24@remotel3: ~/cs214/projects/09/clojure[01;32mgy24@remotel3[00m:[01;34m~/cs214/projects/09/clojure[00m$ cat tremp[K[K[K[Kemperature_tester.clj
+;; Test the temperature.clj, and it contains the main function of tmeperature.clj
+;; Author: David Yoo (gy24)
+;; Date: 03/22/2022
+
+
+(ns temperature_tester)
+
+(load-file "temperature.clj")
+
+;; read the temperature from the user
+(defn readTemp [message]
+  (do
+    (println message)
+    (let [[temp error] (read-temperature)]
+      (if error
+        (readTemp "Invalid input, please enter a valid input: ") 
+        temp
+      )
+    )
+  )
+)
+
+;; read a number from the user
+(defn readNum [message]
+  (do
+    (println message)
+    (let [line (read-line)]
+      (if (isNumeric line)
+        (Float/parseFloat line)
+        (readNum "Invalid input, please enter a valid input: ")
+      )
+    )
+  )
+)
+
+;; table of temperatures
+;; format: https://livebook.manning.com/book/clojure-the-essential-reference/chapter-18/v-30/
+(defn tempTable [current stop step steps start-is-lower]
+  (let [f (format "%-20s" (to-string (toF current)))
+        c (format "%-20s" (to-string (toC current)))
+        k (format "%-20s" (to-string (toK current)))]
+    (if (or (= start-is-lower (less-than? current stop)) (equals? current stop))
+      (do
+        (println (str f c k))
+        (tempTable (steps current step) stop step steps start-is-lower))
+    )
+  )
+)
+
+;; main function
+(defn -main []
+  (do
+    (println """Temperature examples:
+    20.5 C
+    10 K
+    35.1 F""")
+    (let [startTemp (readTemp "Please enter a start temperature: ")
+          stopTemp (readTemp "Please enter a stop temperature: ")
+          step (readNum "Please enter a step amount of degrees: ")]
+      (if (equals? startTemp stopTemp)
+        (println "Start and stop temperatures are equal.")
+        (let [start-is-lower (less-than? startTemp stopTemp)]
+          (if start-is-lower
+            (tempTable startTemp stopTemp step raise start-is-lower)
+            (tempTable startTemp stopTemp step lower start-is-lower)
+          )
+        )
+      )
+    )
+  )         
+)]0;gy24@remotel3: ~/cs214/projects/09/clojure[01;32mgy24@remotel3[00m:[01;34m~/cs214/projects/09/clojure[00m$ clojure -m temperature_tester
+ Temperature examples:
+    20.5 C
+    10 K
+    35.1 F 
+Please enter a start temperature: 
+0 F
+Please enter a stop temperature: 
+100 C
+Please enter a step amount of degrees: 
+2.5
+0.000 F             -17.778 C           255.372 K           
+2.500 F             -16.389 C           256.761 K           
+5.000 F             -15.000 C           258.150 K           
+7.500 F             -13.611 C           259.539 K           
+10.000 F            -12.222 C           260.928 K           
+12.500 F            -10.833 C           262.317 K           
+15.000 F            -9.444 C            263.706 K           
+17.500 F            -8.056 C            265.094 K           
+20.000 F            -6.667 C            266.483 K           
+22.500 F            -5.278 C            267.872 K           
+25.000 F            -3.889 C            269.261 K           
+27.500 F            -2.500 C            270.650 K           
+30.000 F            -1.111 C            272.039 K           
+32.500 F            0.278 C             273.428 K           
+35.000 F            1.667 C             274.817 K           
+37.500 F            3.056 C             276.206 K           
+40.000 F            4.444 C             277.594 K           
+42.500 F            5.833 C             278.983 K           
+45.000 F            7.222 C             280.372 K           
+47.500 F            8.611 C             281.761 K           
+50.000 F            10.000 C            283.150 K           
+52.500 F            11.389 C            284.539 K           
+55.000 F            12.778 C            285.928 K           
+57.500 F            14.167 C            287.317 K           
+60.000 F            15.556 C            288.706 K           
+62.500 F            16.944 C            290.094 K           
+65.000 F            18.333 C            291.483 K           
+67.500 F            19.722 C            292.872 K           
+70.000 F            21.111 C            294.261 K           
+72.500 F            22.500 C            295.650 K           
+75.000 F            23.889 C            297.039 K           
+77.500 F            25.278 C            298.428 K           
+80.000 F            26.667 C            299.817 K           
+82.500 F            28.056 C            301.206 K           
+85.000 F            29.444 C            302.594 K           
+87.500 F            30.833 C            303.983 K           
+90.000 F            32.222 C            305.372 K           
+92.500 F            33.611 C            306.761 K           
+95.000 F            35.000 C            308.150 K           
+97.500 F            36.389 C            309.539 K           
+100.000 F           37.778 C            310.928 K           
+102.500 F           39.167 C            312.317 K           
+105.000 F           40.556 C            313.706 K           
+107.500 F           41.944 C            315.094 K           
+110.000 F           43.333 C            316.483 K           
+112.500 F           44.722 C            317.872 K           
+115.000 F           46.111 C            319.261 K           
+117.500 F           47.500 C            320.650 K           
+120.000 F           48.889 C            322.039 K           
+122.500 F           50.278 C            323.428 K           
+125.000 F           51.667 C            324.817 K           
+127.500 F           53.056 C            326.206 K           
+130.000 F           54.444 C            327.594 K           
+132.500 F           55.833 C            328.983 K           
+135.000 F           57.222 C            330.372 K           
+137.500 F           58.611 C            331.761 K           
+140.000 F           60.000 C            333.150 K           
+142.500 F           61.389 C            334.539 K           
+145.000 F           62.778 C            335.928 K           
+147.500 F           64.167 C            337.317 K           
+150.000 F           65.556 C            338.706 K           
+152.500 F           66.944 C            340.094 K           
+155.000 F           68.333 C            341.483 K           
+157.500 F           69.722 C            342.872 K           
+160.000 F           71.111 C            344.261 K           
+162.500 F           72.500 C            345.650 K           
+165.000 F           73.889 C            347.039 K           
+167.500 F           75.278 C            348.428 K           
+170.000 F           76.667 C            349.817 K           
+172.500 F           78.056 C            351.206 K           
+175.000 F           79.444 C            352.594 K           
+177.500 F           80.833 C            353.983 K           
+180.000 F           82.222 C            355.372 K           
+182.500 F           83.611 C            356.761 K           
+185.000 F           85.000 C            358.150 K           
+187.500 F           86.389 C            359.539 K           
+190.000 F           87.778 C            360.928 K           
+192.500 F           89.167 C            362.317 K           
+195.000 F           90.556 C            363.706 K           
+197.500 F           91.944 C            365.094 K           
+200.000 F           93.333 C            366.483 K           
+202.500 F           94.722 C            367.872 K           
+205.000 F           96.111 C            369.261 K           
+207.500 F           97.500 C            370.650 K           
+210.000 F           98.889 C            372.039 K           
+]0;gy24@remotel3: ~/cs214/projects/09/clojure[01;32mgy24@remotel3[00m:[01;34m~/cs214/projects/09/clojure[00m$ exit
+
+Script done on 2022-03-23 19:45:57-04:00 [COMMAND_EXIT_CODE="0"]

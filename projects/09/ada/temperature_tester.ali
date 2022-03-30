@@ -1,0 +1,76 @@
+V "GNAT Lib v7"
+M P W=b
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV SPARK_05
+
+U temperature_tester%b	temperature_tester.adb	3522ebfb NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W temperature_package%s	temperature_package.adb	temperature_package.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-flteio.ads		20070406091342 e18a47a0 ada.float_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiflio.ads		20140717063513 56fbda09 ada.text_io.float_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+D temperature_package.ads  20220323232808 bd0b2a93 temperature_package%s
+D temperature_tester.adb  20220323233917 51ce731c temperature_tester%b
+X 1 ada.ads
+16K9*Ada 20e8 25|5r6 5r19 6r5 6r18
+X 3 a-flteio.ads
+20K13*Float_Text_IO[8|46] 25|5w23 6r22
+X 7 a-textio.ads
+49K13*Text_IO 471e16 25|5w10 6r9
+166U14*New_Line 25|15s34 16s19 17s17 18s19 42s7 66s10
+187U14*Set_Col 25|60s10 62s10 64s10
+242U14*Put 25|15s4 16s4 17s4 18s4 19s4 22s7 26s4 29s7 33s4 36s7 41s7
+X 24 temperature_package.ads
+4K9*Temperature_Package 100e24 25|5w38 6r37 9r11 10r10 13r13 20r13 23r16
+. 27r12 30r15 34r12 37r15 40r7 49r13 49r59 49r112 53r13 54r24 56r24 61r14
+. 63r14 65r14
+5R9*Temperature 98e17 25|9r31 10r30 13r33
+19V13*ToC{5R9} 25|63s34
+23V13*ToF{5R9} 25|61s34
+27V13*ToK{5R9} 25|65s34
+31V13*Read_Temp{5R9} 25|20s33 23s36 27s32 30s35
+35V13*Read_Degrees{float} 25|34s32 37s35
+39U14*Put 25|61s10 63s10 65s10
+42V13*RaiseIt{5R9} 25|54s44
+46V13*Lower{5R9} 25|56s44
+50V13*Equals{boolean} 25|40s27 49s132
+54V13*Less_Than{boolean} 25|49s33 49s79 53s33
+X 25 temperature_tester.adb
+8U11*Temperature_Tester 8b11 70l5 70t23
+9r4 Start{24|5R9} 20m4 23m7 40r34 46r15 49r43 53r43
+10r4 Stop{24|5R9} 27m4 30m7 40r41 49r50 49r98 49r148 53r50
+11f4 Step{float} 34m4 37m7 54r61 56r59
+12b4 Error{boolean} 20m43 20r43 21r10 23m46 23r46 27m42 27r42 28r10 30m45
+. 30r45 34m45 34r45 35r10 37m48 37r48
+13r4 Current{24|5R9} 46m4 49r89 49r139 54m13 54r52 56m13 56r50 61r38 63r38
+. 65r38
+47l4 Table 50r18 68l16 68e21
+
